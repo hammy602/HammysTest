@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Collection</title>
+  <style>
+    .fullscreen-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 100;
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .embed-container {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+    }
+    iframe {
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+  </header>
+
+  <main>
+    <section class="embed-project">
+      <div class="embed-container">
+        <button class="fullscreen-btn" onclick="toggleFullscreen()">Fullscreen</button>
+        <iframe id="gameFrame"
+          src="https://html5.gamemonetize.co/4a0i6c9p1hnow9k8cypgrqvqvx4l8u7t/"
+          width="100%" height="800px" title="1kh0 Projects">
+        </iframe>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function toggleFullscreen() {
+      const iframe = document.getElementById("gameFrame");
+
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      } else {
+        if (iframe.requestFullscreen) {
+          iframe.requestFullscreen();
+        } else if (iframe.webkitRequestFullscreen) { // Safari
+          iframe.webkitRequestFullscreen();
+        } else if (iframe.msRequestFullscreen) { // IE11
+          iframe.msRequestFullscreen();
+        }
+      }
+    }
+  </script>
+</body>
+</html>
